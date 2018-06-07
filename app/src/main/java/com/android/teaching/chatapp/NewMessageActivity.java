@@ -45,7 +45,7 @@ public class NewMessageActivity extends AppCompatActivity {
     public void onEnviar(View view) {
         findViewById(R.id.texto2);
         findViewById(R.id.texto3);
-        myRef.setValue(String.valueOf("Hola"));
+        myRef.setValue(String.valueOf("Hola")); // myRef.setValue(String.valueOf("R.id.texto2));
         //myRef.setValue(String.valueOf("Hola"));
         //mDatabase.child(String.valueOf(R.id.texto2)).setValue(R.id.texto3);
     }
