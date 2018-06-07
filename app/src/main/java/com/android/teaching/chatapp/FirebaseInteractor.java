@@ -1,4 +1,4 @@
-package com.android.teaching.chatapp;
+/*package com.android.teaching.chatapp;
 
 import android.util.Log;
 
@@ -52,3 +52,4 @@ public class FirebaseInteractor {
     }
 }
 
+*/

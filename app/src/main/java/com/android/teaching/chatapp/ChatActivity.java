@@ -28,7 +28,7 @@ public class ChatActivity extends AppCompatActivity {
 
     private MyAdapter myAdapter;
     private ListView listView;
-    private FirebaseInteractor firebaseInteractor;
+    //private FirebaseInteractor firebaseInteractor;
     //private MyConnectivityReceiver myConnectivityReceiver;
 
     @Override
