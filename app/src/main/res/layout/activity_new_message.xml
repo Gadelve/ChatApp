@@ -47,6 +47,7 @@
         android:layout_height="wrap_content"
          android:layout_below="@+id/texto3"
         android:layout_marginTop="230dp"
-        android:text="ENVIAR"/>
+        android:text="ENVIAR"
+        android:onClick="onEnviar"/>
 </RelativeLayout>
 </android.support.constraint.ConstraintLayout>

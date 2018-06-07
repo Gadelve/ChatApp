@@ -5,6 +5,7 @@
     <item
         android:icon="@drawable/ic_action_add"
         app:showAsAction="ifRoom"
-        android:title="@+id/añadirMensaje"/>
+        android:title="@+id/añadirMensaje"
+        android:id="@+id/añadir"/>
 
 </menu>

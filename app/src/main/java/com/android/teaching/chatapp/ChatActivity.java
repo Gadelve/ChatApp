@@ -1,6 +1,8 @@
 package com.android.teaching.chatapp;
 
+import android.content.ClipData;
 import android.content.Context;
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
@@ -14,6 +16,11 @@ import android.widget.BaseAdapter;
 import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
+
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+
+import java.util.ArrayList;
 
 public class ChatActivity extends AppCompatActivity {
 
@@ -30,6 +37,9 @@ public class ChatActivity extends AppCompatActivity {
         Toolbar myToolbar = findViewById(R.id.toolbar);
         setSupportActionBar(myToolbar);
 
+        FirebaseDatabase database = FirebaseDatabase.getInstance();
+        DatabaseReference myRef = database.getReference("message");
+
     }
 
     @Override
@@ -39,20 +49,32 @@ public class ChatActivity extends AppCompatActivity {
         return true;
     }
 
-
-
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-        switch (item.getItemId()) {
-            // PENDIENTE DE RELLENAR
+        int identificador = item.getItemId();
+        switch (identificador) {
+            case R.id.añadir:
+                Intent intent = new Intent(this, NewMessageActivity.class);
+                startActivity(intent);
+                break;
         }
-        return true;
+        return super.onOptionsItemSelected(item);
     }
 
+
     private class MyAdapter extends BaseAdapter {
+        private Context context;
+        private ArrayList<ClipData.Item> items;
+
+        public void CustomListAdapter(Context context, ArrayList<ClipData.Item> items) {
+            this.context = context;
+            this.items = items;
+
+        }
+
         @Override
         public int getCount() {
-            return 1;
+            return 2;
         }
 
         @Override
@@ -76,3 +98,4 @@ public class ChatActivity extends AppCompatActivity {
         }
     }
 }
+
